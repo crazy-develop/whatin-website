@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WHATIN - Har Ghar Tak Shudh Jal</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 40px;
+      background-color: #fff;
+      border-bottom: 1px solid #ccc;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .hero {
+      background-image: url('C:\c language\image\main.jpg');
+      background-size: cover;
+      background-position: center;
+      color: black;
+      text-align: center;
+      padding: 100px 20px;
+      position: relative;
+    }
+    .hero h1 {
+      font-size: 60px;
+      margin: 10px 0;
+      font-weight: 900;
+    }
+    .hero p {
+      font-size: 24px;
+      margin-bottom: 30px;
+    }
+    .hero button {
+      padding: 15px 30px;
+      font-size: 16px;
+      background-color: #000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .products {
+      display: flex;
+      justify-content: space-around;
+      padding: 40px;
+      background-color: #f3f3f3;
+    }
+    .product {
+      text-align: center;
+      width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+    }
+    .product img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+    .product input {
+      width: 60px;
+      margin-top: 10px;
+      padding: 5px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <img src="C:\c language\image\whatinlogo.png" alt="WHATIN Logo">
+      <strong>WHATIN</strong>
+    </div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Location</a>
+      <a href="#">Complain</a>
+      <a href="#">Login/Signup</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <p>Har Ghar Tak Shudh Jal</p>
+    <h1>whatin</h1>
+    <button>EXPLORE NOW</button>
+  </section>
+
+  <section class="products">
+    <div class="product">
+      <img src="C:\c language\image\bottle4.png" alt="Bottle Pack">
+      <p><strong>QUANTITY</strong></p>
+      <input type="number" min="0">
+    </div>
+
+    <div class="product">
+      <img src="C:\c language\image\bottle3.png" alt="Can">
+      <p><strong>QUANTITY</strong></p>
+      <input type="number" min="0">
+    </div>
+
+    <div class="product">
+      <img src="C:\c language\image\bottle2.png" alt="1L Bottle">
+      <p><strong>QUANTITY</strong></p>
+      <input type="number" min="0">
+    </div>
+  </section>
+</body>
+</html>
