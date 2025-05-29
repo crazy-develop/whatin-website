@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Bottle Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .search-bar input {
+            padding: 8px;
+            width: 250px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+        }
+        .nav-right {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+        .nav-right a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            margin: 40px 20px;
+        }
+        .product {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 20%;
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+        }
+        .product-label {
+            margin-top: 10px;
+            background-color: #e499ff;
+            padding: 10px;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">WHATIN</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="nav-right">
+       <a href="login.html">Login</a>
+
+        <a href="#">🛒 YOUR CART</a>
+    </div>
+</header>
+
+<div class="product-container">
+    <div class="product">
+        <img src="C:\c language\image\WATER_CAMPER.jpg" alt="Water Camper">
+        <div class="product-label">WATER CAMPER</div>
+    </div>
+    <div class="product">
+        <img src="C:\c language\image\WATER_BOTTLES.jpg" alt="RO Bottles">
+        <div class="product-label">RO BOTTLES</div>
+    </div>
+    <div class="product">
+        <img src="C:\c language\image\bisleribottle.jpg" alt="1L Bottles">
+        <div class="product-label">1 L BOTTLES</div>
+    </div>
+    <div class="product">
+        <img src="C:\c language\image\bisleri-5ltr.jpg" alt="5L Bottles">
+        <div class="product-label">5L BOTTLES</div>
+    </div>
+</div>
+
+</body>
+</html>
