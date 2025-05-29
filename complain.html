@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Complaint - WHATIN</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .complaint-box {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 350px;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    select, textarea, input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #000;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #333;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 10px;
+      text-decoration: none;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="complaint-box">
+    <h2>Submit Complaint</h2>
+    <form action="#" method="POST">
+      <label for="category">Select Problem:</label>
+      <select name="category" id="category" required onchange="toggleOther(this.value)">
+        <option value="" disabled selected>Select a problem</option>
+        <option value="login_issue">Login Issue</option>
+        <option value="bug_report">Bug in Website</option>
+        <option value="slow_performance">Website is Slow</option>
+        <option value="other">Other</option>
+      </select>
+
+      <div id="otherBox" style="display: none;">
+        <input type="text" name="other_problem" placeholder="Describe your problem">
+      </div>
+
+      <textarea name="description" rows="4" placeholder="Describe your issue in detail..." required></textarea>
+
+      <button type="submit">Submit Complaint</button>
+      <a href="index.html" class="back-link">← Back to Home</a>
+    </form>
+  </div>
+
+  <script>
+    function toggleOther(value) {
+      const otherBox = document.getElementById('otherBox');
+      if (value === 'other') {
+        otherBox.style.display = 'block';
+      } else {
+        otherBox.style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>

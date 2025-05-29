@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Location Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #map {
+      height: 400px;
+      width: 90%;
+      max-width: 600px;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: black;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #info {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Show My Location on Map</h2>
+  <button onclick="getLocation()">Show Location</button>
+  <div id="map"></div>
+  <div id="info"></div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script>
+    let map;
+
+    function getLocation() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showMap, showError);
+      } else {
+        document.getElementById("info").innerText = "Geolocation is not supported by this browser.";
+      }
+    }
+
+    function showMap(position) {
+      const lat = position.coords.latitude;
+      const lon = position.coords.longitude;
+
+      document.getElementById("info").innerHTML = `Latitude: ${lat}<br>Longitude: ${lon}`;
+
+      if (map) {
+        map.remove(); // Remove old map if exists
+      }
+
+      map = L.map('map').setView([lat, lon], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+      }).addTo(map);
+
+      L.marker([lat, lon]).addTo(map)
+        .bindPopup("You are here!")
+        .openPopup();
+    }
+
+    function showError(error) {
+      const info = document.getElementById("info");
+      switch (error.code) {
+        case error.PERMISSION_DENIED:
+          info.innerText = "Permission denied for location.";
+          break;
+        case error.POSITION_UNAVAILABLE:
+          info.innerText = "Location information unavailable.";
+          break;
+        case error.TIMEOUT:
+          info.innerText = "Request timed out.";
+          break;
+        default:
+          info.innerText = "Unknown error.";
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
