@@ -1,66 +1,110 @@
-<!-- login.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Login - WHATIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    .login-box {
-      background: white;
+
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 800px;
+      max-width: 95%;
+    }
+
+    .image-section {
+      flex: 1;
+      background: url('C:\c language\image\waterocean.gif') no-repeat center center;
+      background-size: cover;
+    }
+
+    .form-section {
+      flex: 1;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
     }
-    h2 {
-      text-align: center;
+
+    .form-section h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .form-group {
       margin-bottom: 20px;
     }
-    input {
+
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    button {
-      width: 100%;
-      padding: 10px;
-      background: #000;
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .login-btn {
+      background-color: #00d2ff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
     }
-    button:hover {
-      background: #333;
-    }
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      text-decoration: none;
-      color: #000;
+
+    .signup-btn {
+      background-color: white;
+      color: #00d2ff;
+      border: 2px solid #00d2ff;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <div class="login-box">
-    <h2>Login</h2>
-    <form>
-      <input type="text" placeholder="Username" required>
-      <input type="password" placeholder="Password" required>
-      <button type="submit">Login</button>
-      <a href="index.html" class="back-link">← Back to Home</a>
-    </form>
+  <div class="container">
+    <div class="image-section"></div>
+    <div class="form-section">
+      <h2>Login</h2>
+      <div class="form-group">
+        <label>Email Address</label><br>
+        <input type="email" placeholder="hello@reallygreatsite">
+      </div>
+      <div class="form-group">
+        <label>Password</label><br>
+        <input type="password" placeholder="********">
+      </div>
+      <div class="buttons">
+        <button class="login-btn">Login</button>
+        <button class="signup-btn">Sign Up</button>
+      </div>
+    </div>
   </div>
 </body>
 </html>
