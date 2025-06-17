@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Login Page</title>
   <style>
     * {
@@ -10,6 +10,21 @@
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, sans-serif;
+    }
+
+    .fade-in {
+      animation: fadeIn 0.7s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
 
     body {
@@ -87,22 +102,23 @@
     }
   </style>
 </head>
-<body>
+
+<body class="fade-in">
   <div class="container">
     <div class="image-section"></div>
     <div class="form-section">
       <h2>Login</h2>
       <div class="form-group">
-        <label>Email Address</label><br>
-        <input type="email" placeholder="hello@reallygreatsite">
+        <label>Email Address</label><br />
+        <input type="email" placeholder="hello@reallygreatsite" />
       </div>
       <div class="form-group">
-        <label>Password</label><br>
-        <input type="password" placeholder="********">
+        <label>Password</label><br />
+        <input type="password" placeholder="********" />
       </div>
       <div class="buttons">
         <button class="login-btn">Login</button>
-        <button class="signup-btn">Sign Up</button>
+        <button class="signup-btn" onclick="location.href='signup.html'">Sign Up</button>
       </div>
     </div>
   </div>
