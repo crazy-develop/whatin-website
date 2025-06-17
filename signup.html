@@ -2,66 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign Up - WHATIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up Page</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
     }
-    .signup-box {
-      background: white;
+
+    body {
+      background: url('drop.jpg') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      width: 800px;
+      max-width: 95%;
+    }
+
+    .form-section {
+      flex: 1;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 300px;
     }
-    h2 {
-      text-align: center;
+
+    .form-section h2 {
+      margin-bottom: 30px;
+      font-size: 28px;
+      color: #333;
+    }
+
+    .form-group {
       margin-bottom: 20px;
     }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      box-sizing: border-box;
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #333;
     }
-    button {
+
+    .form-group input[type="email"],
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
       width: 100%;
       padding: 10px;
-      background: #000;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .terms {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .terms input[type="checkbox"] {
+      margin-right: 8px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .signup-btn {
+      background-color: #00d2ff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
     }
-    button:hover {
-      background: #333;
+
+    .login-btn {
+      background-color: white;
+      color: #00d2ff;
+      border: 2px solid #00d2ff;
+      border-radius: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
     }
-    .back-link {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      text-decoration: none;
-      color: #000;
+
+    .image-section {
+      flex: 1;
+      background: url('waterdrop.jpg') no-repeat center center;
+      background-size: cover;
     }
   </style>
 </head>
 <body>
-  <div class="signup-box">
-    <h2>Sign Up</h2>
-    <form action="#" method="POST">
-      <input type="text" name="name" placeholder="name" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="password" placeholder="Password" required>
-      <input type="password" name="confirm_password" placeholder="Confirm Password" required>
-      <button type="submit">Create Account</button>
-      <a href="login.html" class="back-link">← Back to Login</a>
-    </form>
+  <div class="container">
+    <div class="form-section">
+      <h2>Sign Up</h2>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="hello@reallygreatsite">
+      </div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" placeholder="Samira Hadid">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" placeholder="********">
+      </div>
+      <div class="terms">
+        <label><input type="checkbox"> I agree to the Terms & Conditions</label>
+      </div>
+      <div class="buttons">
+        <button class="signup-btn">Sign Up</button>
+        <button class="login-btn">Login</button>
+      </div>
+    </div>
+    <div class="image-section"></div>
   </div>
 </body>
 </html>
