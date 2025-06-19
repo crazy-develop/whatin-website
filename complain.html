@@ -2,87 +2,123 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Complaint - WHATIN</title>
+  <title>Submit Complaint - WHATIN</title>
   <style>
-    body {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
       font-family: Arial, sans-serif;
-      background: #f3f3f3;
+    }
+
+    body {
+      background: url('background.jpg') no-repeat center center fixed;
+      background-size: cover;
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      margin: 0;
     }
-    .complaint-box {
-      background: white;
+
+    .container {
+      background-color: white;
+      width: 800px;
+      display: flex;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-section {
+      flex: 1;
       padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      width: 350px;
     }
-    h2 {
-      text-align: center;
+
+    .form-section h2 {
       margin-bottom: 20px;
+      font-size: 26px;
+      text-align: center;
+      color: #333;
     }
-    select, textarea, input {
+
+    .form-section label {
+      font-weight: bold;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-section select,
+    .form-section textarea,
+    .form-section input {
       width: 100%;
       padding: 10px;
-      margin: 10px 0;
-      box-sizing: border-box;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
     }
-    button {
+
+    .form-section button {
       width: 100%;
       padding: 10px;
-      background: #000;
+      background-color: #00d2ff;
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 20px;
+      font-size: 16px;
       cursor: pointer;
     }
-    button:hover {
-      background: #333;
+
+    .form-section button:hover {
+      background-color: #00a8cc;
     }
+
     .back-link {
       display: block;
       text-align: center;
       margin-top: 10px;
       text-decoration: none;
-      color: #000;
+      color: #00d2ff;
+      font-size: 14px;
+    }
+
+    .image-section {
+      flex: 1;
+      background: url('complaint-image.jpg') no-repeat center center;
+      background-size: cover;
     }
   </style>
 </head>
 <body>
-  <div class="complaint-box">
-    <h2>Submit Complaint</h2>
-    <form action="#" method="POST">
-      <label for="category">Select Problem:</label>
-      <select name="category" id="category" required onchange="toggleOther(this.value)">
-        <option value="" disabled selected>Select a problem</option>
-        <option value="login_issue">Login Issue</option>
-        <option value="bug_report">Bug in Website</option>
-        <option value="slow_performance">Website is Slow</option>
-        <option value="other">Other</option>
-      </select>
+  <div class="container">
+    <div class="form-section">
+      <h2>Submit Complaint</h2>
+      <form action="#" method="POST">
+        <label for="category">Select Problem:</label>
+        <select name="category" id="category" required onchange="toggleOther(this.value)">
+          <option value="" disabled selected>Select a problem</option>
+          <option value="login_issue">Login Issue</option>
+          <option value="bug_report">Bug in Website</option>
+          <option value="slow_performance">Website is Slow</option>
+          <option value="other">Other</option>
+        </select>
 
-      <div id="otherBox" style="display: none;">
-        <input type="text" name="other_problem" placeholder="Describe your problem">
-      </div>
+        <div id="otherBox" style="display: none;">
+          <input type="text" name="other_problem" placeholder="Describe your problem">
+        </div>
 
-      <textarea name="description" rows="4" placeholder="Describe your issue in detail..." required></textarea>
+        <textarea name="description" rows="4" placeholder="Describe your issue in detail..." required></textarea>
 
-      <button type="submit">Submit Complaint</button>
-      <a href="index.html" class="back-link">← Back to Home</a>
-    </form>
+        <button type="submit">Submit Complaint</button>
+        <a href="index.html" class="back-link">← Back to Home</a>
+      </form>
+    </div>
+    <div class="image-section"></div>
   </div>
 
   <script>
     function toggleOther(value) {
       const otherBox = document.getElementById('otherBox');
-      if (value === 'other') {
-        otherBox.style.display = 'block';
-      } else {
-        otherBox.style.display = 'none';
-      }
+      otherBox.style.display = value === 'other' ? 'block' : 'none';
     }
   </script>
 </body>
