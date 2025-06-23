@@ -118,6 +118,47 @@
       background: url('waterdrop.jpg') no-repeat center center;
       background-size: cover;
     }
+
+    /* Modal Style */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.4);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      min-width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    .modal-content h3 {
+      margin-bottom: 20px;
+    }
+
+    .role-option {
+      margin: 10px 0;
+      padding: 12px 20px;
+      background: #e6f7ff;
+      border: 1px solid #00d2ff;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .role-option:hover {
+      background: #b3e6ff;
+    }
   </style>
 </head>
 
@@ -141,11 +182,41 @@
         <label><input type="checkbox"> I agree to the Terms & Conditions</label>
       </div>
       <div class="buttons">
-        <button class="signup-btn">Sign Up</button>
+        <button class="signup-btn" onclick="showModal()">Sign Up</button>
         <button class="login-btn" onclick="location.href='login.html'">Login</button>
       </div>
     </div>
     <div class="image-section"></div>
   </div>
+
+  <!-- Modal for Role Selection -->
+  <div class="modal" id="roleModal">
+    <div class="modal-content">
+      <h3>Select Sign Up Role</h3>
+      <div class="role-option" onclick="signupAs('retailer')">Retailer</div>
+      <div class="role-option" onclick="signupAs('delivery')">Delivery Boy</div>
+      <div class="role-option" onclick="signupAs('customer')">Customer</div>
+    </div>
+  </div>
+
+  <script>
+    function showModal() {
+      document.getElementById("roleModal").style.display = "flex";
+    }
+
+    function signupAs(role) {
+      // Redirect to respective signup page
+      const page = `${role}-signup.html`;
+      window.location.href = page;
+    }
+
+    // Close modal if clicked outside
+    window.onclick = function(event) {
+      const modal = document.getElementById("roleModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
 </body>
 </html>
