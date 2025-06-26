@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://whatin.in/sitemap.xml
