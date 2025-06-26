@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="WHATIN is a platform to connect RO water plants, distributors, and customers. Get hygienic water delivered to your home." />
+  <meta name="keywords" content="RO water delivery, RO plant, clean drinking water, WHATIN, water bottle delivery" />
+  <meta name="author" content="Dushyant Saini" />
   <title>WHATIN - Har Ghar Tak Shudh Jal</title>
   <style>
     body {
@@ -10,6 +13,7 @@
       font-family: Arial, sans-serif;
       background-color: #ffffff;
     }
+
     header {
       display: flex;
       align-items: center;
@@ -18,38 +22,44 @@
       background-color: #fff;
       border-bottom: 1px solid #ccc;
     }
+
     .logo {
       display: flex;
       align-items: center;
     }
+
     .logo img {
       height: 40px;
       margin-right: 10px;
     }
+
     nav a {
       margin: 0 15px;
       text-decoration: none;
       color: #000;
       font-weight: bold;
     }
+
     .hero {
       background-image: url("sea.gif");
       background-size: cover;
       background-position: center;
-      color: black;
+      color: rgb(8, 0, 8);
       text-align: center;
       padding: 100px 20px;
-      position: relative;
     }
+
     .hero h1 {
       font-size: 60px;
       margin: 10px 0;
       font-weight: 900;
     }
+
     .hero p {
       font-size: 24px;
       margin-bottom: 30px;
     }
+
     .hero button {
       padding: 15px 30px;
       font-size: 16px;
@@ -59,12 +69,16 @@
       cursor: pointer;
       border-radius: 5px;
     }
+
     .products {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
+      gap: 20px;
       padding: 40px;
       background-color: #f3f3f3;
+      flex-wrap: wrap;
     }
+
     .product {
       text-align: center;
       width: 250px;
@@ -72,96 +86,129 @@
       padding: 20px;
       border-radius: 10px;
     }
+
     .product img {
       max-width: 100%;
       height: auto;
       border-radius: 10px;
     }
-    .product input {
-      width: 60px;
-      margin-top: 10px;
-      padding: 5px;
+
+    /* ✅ Vision Section */
+    .vision-section {
+      background-color: #ffffff;
+      padding: 60px 20px;
       text-align: center;
+    }
+
+    .vision-box {
+      background-image: url("visionn.jpg"); /* 👈 replace with your image */
+      background-size: cover;
+      background-position: center;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 30px;
+      border-radius: 15px;
+      color: #000;
+      text-align: left;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .vision-box h2 {
+      font-size: 32px;
+      color: #00aaff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .vision-box p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 15px;
+    }
+
+    .vision-box strong {
+      font-weight: bold;
+    }
+
+    #contact {
+      padding: 30px;
+      background-color: #f4f4f4;
+      text-align: center;
+    }
+
+    #contact a {
+      color: #0066cc;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
+
   <header>
     <div class="logo">
-      <img src="whatinlogo.png" alt="WHATIN Logo">
+      <img src="whatinlogo.png" alt="WHATIN Logo" />
       <strong>WHATIN</strong>
     </div>
-   <nav>
-  <a href="#">Home</a>
-  <a href="about.html">About Us</a>
-  <a href="location.html">Location</a>
-  <a href="complain.html">Complain</a>
-   <a href="signup.html">signup</a>
-  <a href="login.html">Login</a>
-</nav>
+    <nav>
+      <a href="#">Home</a>
+      <a href="about.html">About Us</a>
+      <a href="location.html">Location</a>
+      <a href="complain.html">Complain</a>
+      <a href="signup.html">Signup</a>
+      <a href="login.html">Login</a>
+    </nav>
   </header>
 
   <section class="hero">
     <p>Har Ghar Tak Shudh Jal</p>
-    <h1>whatin</h1>
-        <button onclick="window.location.href='explorenow.html'">EXPLORE NOW</button>
-    
+    <h1>WHATIN</h1>
+    <button onclick="window.location.href='explorenow.html'">EXPLORE NOW</button>
   </section>
 
   <section class="products">
     <div class="product">
-      <img src="dushyant.jpg" alt="founder">
+      <img src="image/dushyant.jpg" alt="Founder Image" />
       <p><strong>FOUNDER</strong></p>
       <p><strong>DUSHYANT SAINI</strong></p>
-  <!--    
     </div>
-
-    <div class="product">
-      <img src="co-founder1.0.jpg" alt="Can">
-      <p><strong>CO-FOUNDER</strong></p>
-       <p><strong>ARTI </strong></p>
-    </div>
-
-     <div class="product">
-      <img src="UNKNOWN.jpg" alt="Can">
-      <p><strong>CO-FOUNDER</strong></p>
-       <p><strong>UNKNOWN</strong></p>
-    </div>
-      -->
   </section>
+
+  <!-- ✅ Vision Section -->
+  <section class="vision-section">
+    <div class="vision-box">
+      <h2>🌊 WHATIN – Founder’s Vision Statement</h2>
+        <p><strong></strong><p><strong>By Dushyant Saini, Founder & Visionary</strong></p>
+
+      <p>I envision a future India where every household has access to clean, safe, and timely water — without confusion, delay, or lack of trust.</p>
+
+      <p>WHATIN is not just a water delivery platform —<br>
+      It is a network of purity and trust, bridging the gap between consumers and distributors through <strong>technology, transparency, and trust</strong>.</p>
+
+      <p>Even today, millions struggle to access clean water, and local suppliers operate without proper systems.<br>
+      I want my platform to deliver the system they truly deserve.</p>
+
+      <p><strong>🔍 What is my Vision?</strong><br>
+      To turn “Har Ghar Tak Shudh Jal” into not just a slogan, but a <strong>tech-driven, community-powered water movement</strong>.</p>
+
+      <p>Through WHATIN:<br>
+      • I want to give every user a <strong>stress-free ordering experience</strong><br>
+      • I want to empower every distributor with <strong>digital tools to grow</strong><br>
+      • And most importantly — <strong>amplify every water-related concern</strong>, so that no customer ever feels unheard</p>
+
+      <p><strong>🚀 My Mission:</strong><br>
+      Empower local water suppliers with digital power, and give every consumer the dignity of clean water.</p>
+
+      <p><strong>🧭 Long-Term Goal:</strong><br>
+      WHATIN should not just be a startup, but grow into a <strong>national utility movement</strong> —<br>
+      Where in every village or city, people can simply click to order water, track delivery, and raise concerns.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:dushyant.saini2024@glbajajgroup.org">dushyant.saini2024@glbajajgroup.org</a></p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/dushyant-saini-6384a532b" target="_blank">linkedin.com/in/dushyantsaini</a></p>
+  </section>
+
 </body>
 </html>
-<section style="background-color: #f4f8ff; padding: 60px 30px; text-align: center; font-family: Arial, sans-serif;">
-  <h2 style="font-size: 36px; color: #004080; margin-bottom: 30px;">🌊 WHATIN – Founder’s Vision Statement</h2>
-  <p style="max-width: 900px; margin: auto; font-size: 20px; color: #222; line-height: 1.8; text-align: left;">
-    <strong>By Dushyant Saini, Founder & Visionary</strong><br><br>
-
-    I envision a future India where every household has access to clean, safe, and timely water — without confusion, delay, or lack of trust.<br><br>
-
-    WHATIN is not just a water delivery platform —<br>
-    It is a network of purity and trust, bridging the gap between consumers and distributors through <strong>technology, transparency, and trust</strong>.<br><br>
-
-    Even today, millions struggle to access clean water, and local suppliers operate without proper systems.<br>
-    I want my platform to deliver the system they truly deserve.<br><br>
-
-    <strong>🔍 What is my Vision?</strong><br>
-    To turn “Har Ghar Tak Shudh Jal” into not just a slogan, but a <strong>tech-driven, community-powered water movement</strong>.<br><br>
-
-    Through WHATIN:<br>
-    • I want to give every user a <strong>stress-free ordering experience</strong><br>
-    • I want to empower every distributor with <strong>digital tools to grow</strong><br>
-    • And most importantly — <strong>amplify every water-related concern</strong>, so that no customer ever feels unheard<br><br>
-
-    <strong>🚀 My Mission:</strong><br>
-    Empower local water suppliers with digital power, and give every consumer the dignity of clean water.<br><br>
-
-    <strong>🧭 Long-Term Goal:</strong><br>
-    WHATIN should not just be a startup, but grow into a <strong>national utility movement</strong> —<br>
-    Where in every village or city, people can simply click to order water, track delivery, and raise concerns.
-  </p>
-</section>
-<section id="contact">
-  <h2>Contact Me</h2>
-                       <p>Email: <a href="mailto:dushyant.saini2024@glbajajgroup.org">dushyant.saini2024@glbajajgroup.org</a></p>
-                       <p>LinkedIn: <a href="https://linkedin.com/in/dushyant-saini-6384a532b" target="_blank">linkedin.com/in/dushyantsaini</a></p>
-</section>
