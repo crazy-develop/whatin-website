@@ -1,168 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Retailers - WHATIN</title>
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background-color: #d9d1ca;
-      font-family: 'Arial Rounded MT Bold', sans-serif;
-      color: #2b2b2b;
-      background-image: url('left-bg.png'), url('right-bg.png');
-      background-position: left top, right top;
-      background-repeat: no-repeat, no-repeat;
-      background-size: auto 100%, auto 100%;
-    }
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 30px;
-      background-color: #d9d1ca;
-      border-bottom: 2px solid rebeccapurple;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #2b2b2b;
-      font-weight: normal;
-      font-size: 20px;
-    }
-    .cart {
-      display: flex;
-      align-items: center;
-      font-size: 18px;
-    }
-    .cart img {
-      height: 40px;
-      margin-right: 8px;
-    }
-    .search-box {
-      display: flex;
-      align-items: center;
-      border: 2px solid #333;
-      border-radius: 20px;
-      padding: 8px 20px;
-      width: 400px;
-      background-color: #f0f0f0;
-    }
-    .search-box input {
-      border: none;
-      background: transparent;
-      outline: none;
-      width: 100%;
-      padding-left: 15px;
-      font-size: 18px;
-    }
-    .search-icon {
-      font-size: 22px;
-      color: #333;
-    }
-    .container {
-      padding: 60px;
-    }
-    h2 {
-      font-size: 48px;
-      margin-bottom: 50px;
-    }
-    .retailer {
-      margin-bottom: 80px;
-    }
-    .retailer h3 {
-      margin-bottom: 10px;
-      font-size: 36px;
-    }
-    .retailer p {
-      margin: 10px 0;
-      font-size: 24px;
-    }
-    .order-list {
-      margin-top: 20px;
-      margin-left: 30px;
-    }
-    .order-item {
-      display: flex;
-      align-items: center;
-      margin: 15px 0;
-      font-size: 22px;
-    }
-    .order-item span {
-      width: 250px;
-    }
-    .order-item input {
-      border: none;
-      background: white;
-      padding: 10px;
-      width: 80px;
-      border-radius: 20px;
-      text-align: center;
-      font-size: 20px;
-    }
-    .order-item input::-webkit-outer-spin-button,
-    .order-item input::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-    .order-item input[type=number] {
-      -moz-appearance: textfield;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Multi-Shop</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <div class="search-box">
-      <span class="search-icon">🔍</span>
-      <input type="text" placeholder="Search Retailers">
-    </div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="location.html">Location</a>
-      <a href="signup.html">Signup</a>
-      <a href="login.html">Login</a>
-    </nav>
-    <div class="cart">
-      <img src="your cart.png" alt="Cart">
-      your cart
-    </div>
-  </header>
+<body class="bg-gray-50 text-gray-800">
 
-  <div class="container">
-    <h2>Retailers</h2>
+  <!-- Top Navigation -->
+  <div class="flex justify-between items-center px-6 py-4 bg-white shadow">
+    <h1 class="text-2xl font-bold">cold-water</h1>
+    <div class="flex gap-4 items-center">
+      <input type="text" placeholder="Search products..." class="pl-4 pr-4 py-2 border rounded-full text-sm" />
+      <button class="flex items-center px-4 py-2 border rounded text-sm">🛒 Cart</button>
+      <a href="signup.html" class="flex items-center px-4 py-2 border rounded text-sm">👤 Sign Up</a>
+<a href="login.html" class="flex items-center px-4 py-2 border rounded text-sm">🔑 Login</a>
 
-    <div class="retailer">
-      <h3>1) <strong>jay siya ram ro water</strong></h3>
-      <p>address -- Birla mandir near mathura</p>
-      <p><strong>Give order</strong></p>
-      <div class="order-list">
-        <div class="order-item">
-          <span>Ro bottles cold</span> ₹25/<span></span>
-          <input type="number" min="0" step="1">
-        </div>
-        <div class="order-item">
-          <span>Ro bottle normal</span> ₹15/<span></span>
-          <input type="number" min="0" step="1">
-        </div>
-      </div>
-    </div>
-
-    <div class="retailer">
-      <h3>2) <strong>Bs ro water</strong></h3>
-      <p>adress -- Bc goyal hospital behind mathura</p>
-      <p><strong>Give order</strong></p>
-      <div class="order-list">
-        <div class="order-item">
-          <span>Ro bottles cold</span> ₹25/ <span></span>
-          <input type="number" min="0" step="1">
-        </div>
-        <div class="order-item">
-          <span>Ro bottle normal</span> ₹15/<span></span>
-          <input type="number" min="0" step="1">
-        </div>
-      </div>
     </div>
   </div>
+
+  <!-- Product Grid -->
+  <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+    <!-- Product Cards -->
+    <!-- 1 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="bottle3.png" alt="cold water bottle 20L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2"> cold water bottle 20L</h2>
+      <p class="text-gray-600">₹25</p>
+      <p class="text-gray-600">jay siya ram ro water</p>
+      <div class="text-yellow-400">★★★★☆</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="bottle3.png" alt="16L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2"> cold water bottle 16L</h2>
+      <p class="text-gray-600">₹22</p>
+      <p class="text-gray-600">jay siya ram ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="22L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">cold water bottle 22L </h2>
+      <p class="text-gray-600">₹30</p>
+      <p class="text-gray-600">jay siya ram ro water</p>
+      <div class="text-yellow-400">★★★★☆</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="5L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">cold watter 5L</h2>
+      <p class="text-gray-600">₹10</p>
+      <p class="text-gray-600">jay siya ram ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="discamper " class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">Discamper 5L</h2>
+      <p class="text-gray-600">₹20 per day</p>
+      <p class="text-gray-600">jay siya ram ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>                                   
+    <!--6-->
+<div class="bg-white rounded-xl shadow p-4">
+      <img src="bottle3.png" alt="cold water bottle 20L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2"> cold water bottle 20L</h2>
+      <p class="text-gray-600">₹25</p>
+      <p class="text-gray-600">Bs ro water</p>
+      <div class="text-yellow-400">★★★★☆</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="bottle3.png" alt="16L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2"> cold water bottle 16L</h2>
+      <p class="text-gray-600">₹22</p>
+      <p class="text-gray-600">Bs ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="22L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">cold water bottle 22L </h2>
+      <p class="text-gray-600">₹30</p>
+      <p class="text-gray-600">Bs ro water</p>
+      <div class="text-yellow-400">★★★★☆</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+
+    <!-- 9 -->
+    <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="5L" class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">cold watter 5L</h2>
+      <p class="text-gray-600">₹10</p>
+      <p class="text-gray-600">Bs ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div>
+   
+    <!-- 10 -->
+     <div class="bg-white rounded-xl shadow p-4">
+      <img src="https://via.placeholder.com/150" alt="discamper " class="w-full h-40 object-contain rounded" />
+      <h2 class="text-lg font-semibold mt-2">Discamper 5L</h2>
+      <p class="text-gray-600">₹20 per day</p>
+      <p class="text-gray-600">Bs ro water</p>
+      <div class="text-yellow-400">★★★★★</div>
+      <div class="flex items-center gap-2 mt-2">
+        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
+      </div>
+    </div> 
+
+  <!-- Order Tracking Section -->
+  <div class="p-6 mt-6">
+    <h2 class="text-xl font-semibold mb-2">Track Your Order</h2>
+    <input type="text" placeholder="Enter Order ID..." class="w-full md:w-1/2 px-4 py-2 border rounded mb-2" />
+    <button class="px-4 py-2 bg-blue-600 text-white rounded">Track</button>
+  </div>
+
 </body>
 </html>
