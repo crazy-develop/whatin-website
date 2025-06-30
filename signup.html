@@ -33,17 +33,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 20px;
     }
 
     .container {
       display: flex;
+      flex-direction: row;
       background-color: white;
       border-radius: 20px;
       overflow: hidden;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
       width: 800px;
-      max-width: 95%;
+      max-width: 100%;
     }
 
     .form-section {
@@ -90,7 +92,8 @@
 
     .buttons {
       display: flex;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .signup-btn {
@@ -159,6 +162,30 @@
     .role-option:hover {
       background: #b3e6ff;
     }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .form-section, .image-section {
+        width: 100%;
+      }
+
+      .image-section {
+        height: 200px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .signup-btn, .login-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 
@@ -205,12 +232,10 @@
     }
 
     function signupAs(role) {
-      // Redirect to respective signup page
       const page = `${role}-signup.html`;
       window.location.href = page;
     }
 
-    // Close modal if clicked outside
     window.onclick = function(event) {
       const modal = document.getElementById("roleModal");
       if (event.target === modal) {
