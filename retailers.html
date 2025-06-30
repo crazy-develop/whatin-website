@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Multi-Shop</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    #addressFormWrapper, #paymentModeWrapper, #upiDetailsWrapper, #orderConfirmationMessage {
+      display: none;
+    }
+    #qrCode img {
+      max-width: 200px;
+      margin: auto;
+    }
+    #userAddressBox {
+      display: none;
+    }
+  </style>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
@@ -15,180 +27,129 @@
       <input type="text" placeholder="Search products..." class="pl-4 pr-4 py-2 border rounded-full text-sm" />
       <button class="flex items-center px-4 py-2 border rounded text-sm">🛒 Cart</button>
       <a href="signup.html" class="flex items-center px-4 py-2 border rounded text-sm">👤 Sign Up</a>
-<a href="login.html" class="flex items-center px-4 py-2 border rounded text-sm">🔑 Login</a>
-
+      <a href="login.html" class="flex items-center px-4 py-2 border rounded text-sm">🔑 Login</a>
     </div>
   </div>
+
+  <!-- User Address Box -->
+  <div id="userAddressBox" class="max-w-2xl mx-auto mt-4 p-4 rounded-xl border border-green-400 bg-green-100 bg-opacity-50 text-green-900 font-medium"></div>
 
   <!-- Product Grid -->
   <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <script>
+      const products = [
+        { name: 'Cold Water Bottle 20L', price: 25, image: 'bottle3.png', ro: 'jay siya ram ro water', rating: '★★★★☆' },
+        { name: 'Cold Water Bottle 16L', price: 22, image: 'bottle3.png', ro: 'bs ro water', rating: '★★★★★' },
+        { name: 'Cold Water Bottle 22L', price: 30, image: 'bottle3.png', ro: 'fresh aqua ro water', rating: '★★★☆☆' },
+        { name: 'Cold Water 5L', price: 10, image: 'image/bottlex.png', ro: 'ganga jal ro water', rating: '★★★★☆' },
+        { name: 'Discamper 5L', price: 20, image: 'image/discamper1.png', ro: 'pure ro water', rating: '★★★★★' },
+        { name: 'Cold Water Bottle 20L (New)', price: 25, image: 'bottle3.png', ro: 'jal dev ro water', rating: '★★★☆☆' },
+        { name: 'Cold Water Bottle 16L (New)', price: 22, image: 'bottle3.png', ro: 'aqua trust ro water', rating: '★★★★☆' },
+        { name: 'Cold Water Bottle 22L (New)', price: 30, image: 'bottlex.png', ro: 'narmada ro water', rating: '★★☆☆☆' },
+        { name: 'Cold Water 5L (New)', price: 10, image: 'image/bottle8.png', ro: 'jal bindu ro water', rating: '★★★★☆' },
+        { name: 'Discamper 5L (New)', price: 20, image: 'image/discamper2.png', ro: 'jal pran ro water', rating: '★★★★★' }
+      ];
 
-    <!-- Product Cards -->
-    <!-- 1 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="bottle3.png" alt="cold water bottle 20L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2"> cold water bottle 20L</h2>
-      <p class="text-gray-600">₹25</p>
-      <p class="text-gray-600">jay siya ram ro water</p>
-      <div class="text-yellow-400">★★★★☆</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 2 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="bottle3.png" alt="16L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2"> cold water bottle 16L</h2>
-      <p class="text-gray-600">₹22</p>
-      <p class="text-gray-600">jay siya ram ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 3 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="22L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">cold water bottle 22L </h2>
-      <p class="text-gray-600">₹30</p>
-      <p class="text-gray-600">jay siya ram ro water</p>
-      <div class="text-yellow-400">★★★★☆</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 4 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="5L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">cold watter 5L</h2>
-      <p class="text-gray-600">₹10</p>
-      <p class="text-gray-600">jay siya ram ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 5 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="discamper " class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">Discamper 5L</h2>
-      <p class="text-gray-600">₹20 per day</p>
-      <p class="text-gray-600">jay siya ram ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>                                   
-    <!--6-->
-<div class="bg-white rounded-xl shadow p-4">
-      <img src="bottle3.png" alt="cold water bottle 20L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2"> cold water bottle 20L</h2>
-      <p class="text-gray-600">₹25</p>
-      <p class="text-gray-600">Bs ro water</p>
-      <div class="text-yellow-400">★★★★☆</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 7 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="bottle3.png" alt="16L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2"> cold water bottle 16L</h2>
-      <p class="text-gray-600">₹22</p>
-      <p class="text-gray-600">Bs ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 8 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="22L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">cold water bottle 22L </h2>
-      <p class="text-gray-600">₹30</p>
-      <p class="text-gray-600">Bs ro water</p>
-      <div class="text-yellow-400">★★★★☆</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-
-    <!-- 9 -->
-    <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="5L" class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">cold watter 5L</h2>
-      <p class="text-gray-600">₹10</p>
-      <p class="text-gray-600">Bs ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div>
-   
-    <!-- 10 -->
-     <div class="bg-white rounded-xl shadow p-4">
-      <img src="https://via.placeholder.com/150" alt="discamper " class="w-full h-40 object-contain rounded" />
-      <h2 class="text-lg font-semibold mt-2">Discamper 5L</h2>
-      <p class="text-gray-600">₹20 per day</p>
-      <p class="text-gray-600">Bs ro water</p>
-      <div class="text-yellow-400">★★★★★</div>
-      <div class="flex items-center gap-2 mt-2">
-        <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
-      </div>
-      <div class="flex gap-2 mt-2">
-        <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
-        <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm">Buy Now</button>
-      </div>
-    </div> 
-
-  <!-- Order Tracking Section -->
-  <div class="p-6 mt-6">
-    <h2 class="text-xl font-semibold mb-2">Track Your Order</h2>
-    <input type="text" placeholder="Enter Order ID..." class="w-full md:w-1/2 px-4 py-2 border rounded mb-2" />
-    <button class="px-4 py-2 bg-blue-600 text-white rounded">Track</button>
+      products.forEach((product) => {
+        document.write(`
+          <div class="bg-white rounded-xl shadow p-4">
+            <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-contain rounded" />
+            <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
+            <p class="text-gray-600">₹${product.price}</p>
+            <p class="text-gray-600">${product.ro}</p>
+            <div class="text-yellow-400">${product.rating}</div>
+            <div class="flex items-center gap-2 mt-2">
+              <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+            </div>
+            <div class="flex gap-2 mt-2">
+              <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
+              <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm" onclick="showAddressForm('${product.name}', '${product.price}')">Buy Now</button>
+            </div>
+          </div>
+        `);
+      });
+    </script>
   </div>
+
+  <!-- Address Form -->
+  <div id="addressFormWrapper" class="max-w-md mx-auto p-6 bg-white rounded shadow mt-6">
+    <h2 class="text-xl font-semibold mb-4">Enter Delivery Address</h2>
+    <form id="addressForm">
+      <input type="text" id="name" placeholder="Your Name" required class="w-full mb-3 px-4 py-2 border rounded">
+      <input type="text" id="phone" placeholder="Phone Number" required class="w-full mb-3 px-4 py-2 border rounded">
+      <textarea id="address" placeholder="Full Address" rows="3" required class="w-full mb-3 px-4 py-2 border rounded"></textarea>
+      <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded">Confirm Address</button>
+    </form>
+  </div>
+
+  <!-- Payment Mode -->
+  <div id="paymentModeWrapper" class="max-w-md mx-auto p-6 bg-white rounded shadow mt-6">
+    <h2 class="text-xl font-semibold mb-4">Select Payment Mode</h2>
+    <form>
+      <label class="block mb-2">
+        <input type="radio" name="payment" value="cod" class="mr-2" checked onclick="toggleUPI(false)">Cash on Delivery (COD)
+      </label>
+      <label class="block mb-2">
+        <input type="radio" name="payment" value="online" class="mr-2" onclick="toggleUPI(true)">Online Payment
+      </label>
+      <div id="upiDetailsWrapper" class="pl-4">
+        <p class="mb-2 font-semibold">Scan to Pay:</p>
+        <div id="qrCode">
+          <img src="image/QR.jpg" alt="QR Code">
+        </div>
+        <p class="text-sm mt-2 text-gray-600">Once the payment is confirmed, you'll be notified.</p>
+      </div>
+      <button type="button" class="w-full bg-green-600 text-white px-4 py-2 rounded mt-4" onclick="confirmPayment()">Proceed</button>
+    </form>
+  </div>
+
+  <!-- Confirmation -->
+  <div id="orderConfirmationMessage" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
+    <div class="bg-white p-6 rounded shadow-xl text-center">
+      <h2 class="text-xl font-bold text-green-600 mb-2">Your order has been successfully placed.</h2>
+      <p class="text-gray-700">Thank you for shopping with us!</p>
+    </div>
+  </div>
+
+  <script>
+    let currentProduct = '';
+
+    function showAddressForm(productName, price) {
+      currentProduct = productName;
+      document.getElementById('addressFormWrapper').style.display = 'block';
+      document.getElementById('paymentModeWrapper').style.display = 'none';
+      document.getElementById('orderConfirmationMessage').style.display = 'none';
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    document.getElementById('addressForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const phone = document.getElementById('phone').value;
+      const address = document.getElementById('address').value;
+      const fullInfo = `Deliver to: ${name}, Phone: ${phone}, Address: ${address}, Product: ${currentProduct}`;
+
+      const userBox = document.getElementById('userAddressBox');
+      userBox.textContent = fullInfo;
+      userBox.style.display = 'block';
+
+      document.getElementById('addressFormWrapper').style.display = 'none';
+      document.getElementById('paymentModeWrapper').style.display = 'block';
+      window.scrollTo(0, document.body.scrollHeight);
+    });
+
+    function toggleUPI(show) {
+      document.getElementById('upiDetailsWrapper').style.display = show ? 'block' : 'none';
+    }
+
+    function confirmPayment() {
+      document.getElementById('paymentModeWrapper').style.display = 'none';
+      document.getElementById('orderConfirmationMessage').style.display = 'flex';
+      setTimeout(() => {
+        document.getElementById('orderConfirmationMessage').style.display = 'none';
+      }, 10000);
+    }
+  </script>
 
 </body>
 </html>
