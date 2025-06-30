@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,9 +27,16 @@
   <meta property="og:url" content="https://whatin.in" />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://whatin.in/whatinlogo.png" />
-
+<!-- Replace your full HTML with the updated version below -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="WHATIN is a platform to connect RO water plants, distributors, and customers. Get hygienic water delivered to your home." />
+  <meta name="keywords" content="RO water delivery, RO plant, clean drinking water, WHATIN, water bottle delivery" />
+  <meta name="author" content="Dushyant Saini" />
   <title>WHATIN - Har Ghar Tak Shudh Jal</title>
-
   <style>
     * {
       margin: 0;
@@ -43,18 +51,17 @@
 
     header {
       display: flex;
-      flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
-      padding: 10px 20px;
+      padding: 10px 40px;
       background-color: #fff;
       border-bottom: 1px solid #ccc;
+      flex-wrap: wrap;
     }
 
     .logo {
       display: flex;
       align-items: center;
-      margin-bottom: 10px;
     }
 
     .logo img {
@@ -66,18 +73,17 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 15px;
     }
 
     nav a {
-      margin: 5px 10px;
       text-decoration: none;
       color: #000;
       font-weight: bold;
-      font-size: 16px;
     }
 
     .hero {
-      background-image: url("sea.gif");
+      background-image: url("image/waterocean.gif");
       background-size: cover;
       background-position: center;
       color: rgb(8, 0, 8);
@@ -92,8 +98,8 @@
     }
 
     .hero p {
-      font-size: 22px;
-      margin-bottom: 25px;
+      font-size: 20px;
+      margin-bottom: 30px;
     }
 
     .hero button {
@@ -109,20 +115,18 @@
     .products {
       display: flex;
       justify-content: center;
-      gap: 20px;
-      padding: 30px;
-      background-color: #f3f3f3;
       flex-wrap: wrap;
+      gap: 20px;
+      padding: 40px 20px;
+      background-color: #f3f3f3;
     }
 
     .product {
       text-align: center;
-      width: 100%;
-      max-width: 250px;
+      width: 250px;
       background: #fff;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
 
     .product img {
@@ -133,17 +137,17 @@
 
     .vision-section {
       background-color: #ffffff;
-      padding: 40px 20px;
+      padding: 60px 20px;
       text-align: center;
     }
 
     .vision-box {
-      background-image: url("visionn.jpg");
+      background-image: url("image/visionn.jpg");
       background-size: cover;
       background-position: center;
       max-width: 900px;
       margin: 0 auto;
-      padding: 30px 20px;
+      padding: 50px 30px;
       border-radius: 15px;
       color: #000;
       text-align: left;
@@ -154,17 +158,17 @@
       font-size: 28px;
       color: #00aaff;
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     .vision-box p {
       font-size: 16px;
-      line-height: 1.7;
-      margin-bottom: 12px;
+      line-height: 1.8;
+      margin-bottom: 15px;
     }
 
     #contact {
-      padding: 30px 10px;
+      padding: 30px 20px;
       background-color: #f4f4f4;
       text-align: center;
     }
@@ -172,55 +176,100 @@
     #contact a {
       color: #0066cc;
       text-decoration: none;
-      word-break: break-word;
     }
 
-    /* ✅ Responsive Enhancements */
-    @media (max-width: 600px) {
+    .images {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .images img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #000;
+      color: #aaa;
+      font-size: 0.85rem;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: white;
+      margin: 10% auto;
+      padding: 30px;
+      border-radius: 10px;
+      width: 90%;
+      max-width: 400px;
+      position: relative;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+
+    .modal-content input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+    }
+
+    .modal-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: green;
+      color: white;
+      border: none;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
       .hero h1 {
         font-size: 36px;
       }
-
       .hero p {
         font-size: 18px;
-      }
-
-      .hero button {
-        width: 100%;
-        max-width: 300px;
-      }
-
-      nav a {
-        font-size: 14px;
-        margin: 5px;
-      }
-
-      .vision-box {
-        padding: 20px 15px;
-      }
-
-      .vision-box h2 {
-        font-size: 24px;
-      }
-
-      .vision-box p {
-        font-size: 15px;
       }
     }
   </style>
 </head>
-
 <body>
-
   <header>
     <div class="logo">
-      <img src="whatinlogo.png" alt="WHATIN Logo" />
+      <img src="image/whatinlogo.png" alt="WHATIN Logo" />
       <strong>WHATIN</strong>
     </div>
     <nav>
       <a href="#">Home</a>
       <a href="about.html">About Us</a>
-      <a href="location.html">Location</a>
+      <a href="#" onclick="openModal()">Track Order</a>
       <a href="complain.html">Complain</a>
       <a href="signup.html">Signup</a>
       <a href="login.html">Login</a>
@@ -235,7 +284,7 @@
 
   <section class="products">
     <div class="product">
-      <img src="dushyant.jpg" alt="Founder Image" />
+      <img src="image/dushyant.jpg" alt="Founder Image" />
       <p><strong>FOUNDER</strong></p>
       <p><strong>DUSHYANT SAINI</strong></p>
     </div>
@@ -243,24 +292,22 @@
 
   <section class="vision-section">
     <div class="vision-box">
-      <h2>🌊 WHATIN – Founder’s Vision Statement</h2>
-      <p><strong>By Dushyant Saini, Founder & Visionary</strong></p>
-      <p>I envision a future India where every household has access to clean, safe, and timely water — without confusion, delay, or lack of trust.</p>
-      <p>WHATIN is not just a water delivery platform —<br>
-        It is a network of purity and trust, bridging the gap between consumers and distributors through <strong>technology, transparency, and trust</strong>.</p>
-      <p>Even today, millions struggle to access clean water, and local suppliers operate without proper systems.<br>
-        I want my platform to deliver the system they truly deserve.</p>
-      <p><strong>🔍 What is my Vision?</strong><br>
-        To turn “Har Ghar Tak Shudh Jal” into not just a slogan, but a <strong>tech-driven, community-powered water movement</strong>.</p>
-      <p>Through WHATIN:<br>
-        • I want to give every user a <strong>stress-free ordering experience</strong><br>
-        • I want to empower every distributor with <strong>digital tools to grow</strong><br>
-        • And most importantly — <strong>amplify every water-related concern</strong>, so that no customer ever feels unheard</p>
-      <p><strong>🚀 My Mission:</strong><br>
-        Empower local water suppliers with digital power, and give every consumer the dignity of clean water.</p>
-      <p><strong>🧭 Long-Term Goal:</strong><br>
-        WHATIN should not just be a startup, but grow into a <strong>national utility movement</strong> —<br>
-        Where in every village or city, people can simply click to order water, track delivery, and raise concerns.</p>
+      <!-- [Vision content remains unchanged] -->
+       <section class="vision-section">
+  <div class="vision-box">
+    <h2>🌊 WHATIN – Founder’s Vision Statement</h2>
+    <p><strong>By Dushyant Saini, Founder & Visionary</strong></p>
+    <p>I envision a future India where every household has access to clean, safe, and timely water — without confusion, delay, or lack of trust.</p>
+    <p>WHATIN is not just a water delivery platform —<br>It is a network of purity and trust, bridging the gap between consumers and distributors through <strong>technology, transparency, and trust</strong>.</p>
+    <p>Even today, millions struggle to access clean water, and local suppliers operate without proper systems.<br>I want my platform to deliver the system they truly deserve.</p>
+    <p><strong>🔍 What is my Vision?</strong><br>To turn “Har Ghar Tak Shudh Jal” into not just a slogan, but a <strong>tech-driven, community-powered water movement</strong>.</p>
+    <p>Through WHATIN:<br>• I want to give every user a <strong>stress-free ordering experience</strong><br>• I want to empower every distributor with <strong>digital tools to grow</strong><br>• And most importantly — <strong>amplify every water-related concern</strong>, so that no customer ever feels unheard</p>
+    <p><strong>🚀 My Mission:</strong><br>Empower local water suppliers with digital power, and give every consumer the dignity of clean water.</p>
+    <p><strong>🔭 Long-Term Goal:</strong><br>WHATIN should not just be a startup, but grow into a <strong>national utility movement</strong> —<br>Where in every village or city, people can simply click to order water, track delivery, and raise concerns.</p>
+  </div>
+</section>
+
+      <!-- Same as before -->
     </div>
   </section>
 
@@ -270,5 +317,48 @@
     <p>LinkedIn: <a href="https://linkedin.com/in/dushyant-saini-6384a532b" target="_blank">linkedin.com/in/dushyantsaini</a></p>
   </section>
 
+  <footer>
+    &copy; 2025 Dushyant Saini | Under the falling stars, we build dreams.
+  </footer>
+
+  <!-- Track Order Modal -->
+  <div id="trackModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2>Track Your Order</h2>
+      <input type="text" id="orderId" placeholder="Enter your Order ID">
+      <button onclick="trackOrder()">Track</button>
+      <div id="trackResult" style="margin-top:10px;"></div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById("trackModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("trackModal").style.display = "none";
+      document.getElementById("trackResult").innerHTML = "";
+    }
+
+    function trackOrder() {
+      const orderId = document.getElementById("orderId").value.trim();
+      const resultDiv = document.getElementById("trackResult");
+
+      if (orderId === "") {
+        resultDiv.innerHTML = "<span style='color:red;'>Please enter a valid Order ID.</span>";
+      } else {
+        resultDiv.innerHTML = `✅ Order <strong>#${orderId}</strong> is <span style="color:green;">Out for Delivery</span>.`;
+      }
+    }
+
+    window.onclick = function(event) {
+      const modal = document.getElementById("trackModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+  </script>
 </body>
 </html>
