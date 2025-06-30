@@ -21,9 +21,9 @@
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Top Navigation -->
-  <div class="flex flex-col md:flex-row justify-between items-center px-6 py-4 bg-white shadow gap-4 md:gap-0">
+  <div class="flex justify-between items-center px-6 py-4 bg-white shadow">
     <h1 class="text-2xl font-bold">cold-water</h1>
-    <div class="flex flex-wrap gap-2 items-center">
+    <div class="flex gap-4 items-center">
       <input type="text" placeholder="Search products..." class="pl-4 pr-4 py-2 border rounded-full text-sm" />
       <button class="flex items-center px-4 py-2 border rounded text-sm">🛒 Cart</button>
       <a href="signup.html" class="flex items-center px-4 py-2 border rounded text-sm">👤 Sign Up</a>
@@ -35,7 +35,7 @@
   <div id="userAddressBox" class="max-w-2xl mx-auto mt-4 p-4 rounded-xl border border-green-400 bg-green-100 bg-opacity-50 text-green-900 font-medium"></div>
 
   <!-- Product Grid -->
-  <div class="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <script>
       const products = [
         { name: 'Cold Water Bottle 20L', price: 25, image: 'bottle3.png', ro: 'jay siya ram ro water', rating: '★★★★☆' },
@@ -45,16 +45,16 @@
         { name: 'Discamper 5L', price: 20, image: 'image/discamper1.png', ro: 'pure ro water', rating: '★★★★★' },
         { name: 'Cold Water Bottle 20L (New)', price: 25, image: 'bottle3.png', ro: 'jal dev ro water', rating: '★★★☆☆' },
         { name: 'Cold Water Bottle 16L (New)', price: 22, image: 'bottle3.png', ro: 'aqua trust ro water', rating: '★★★★☆' },
-        { name: 'Cold Water Bottle 22L (New)', price: 30, image: 'bottlex.png', ro: 'narmada ro water', rating: '★★☆☆☆' },
+        { name: 'Cold Water Bottle 22L (New)', price: 30, image: 'image/bottlex.png', ro: 'narmada ro water', rating: '★★☆☆☆' },
         { name: 'Cold Water 5L (New)', price: 10, image: 'image/bottle8.png', ro: 'jal bindu ro water', rating: '★★★★☆' },
         { name: 'Discamper 5L (New)', price: 20, image: 'image/discamper2.png', ro: 'jal pran ro water', rating: '★★★★★' }
       ];
 
       products.forEach((product) => {
         document.write(`
-          <div class="bg-white rounded-xl shadow p-4 flex flex-col items-center">
+          <div class="bg-white rounded-xl shadow p-4">
             <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-contain rounded" />
-            <h2 class="text-lg font-semibold mt-2 text-center">${product.name}</h2>
+            <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
             <p class="text-gray-600">₹${product.price}</p>
             <p class="text-gray-600">${product.ro}</p>
             <div class="text-yellow-400">${product.rating}</div>
@@ -105,50 +105,64 @@
 
   <!-- Confirmation -->
   <div id="orderConfirmationMessage" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 hidden">
-    <div class="bg-white p-6 rounded shadow-xl text-center max-w-sm w-full mx-2">
+    <div class="bg-white p-6 rounded shadow-xl text-center">
       <h2 class="text-xl font-bold text-green-600 mb-2">Your order has been successfully placed.</h2>
       <p class="text-gray-700">Thank you for shopping with us!</p>
     </div>
   </div>
 
   <script>
-    let currentProduct = '';
+  let currentProduct = '';
+  let currentQtyInput = null;
 
-    function showAddressForm(productName, price) {
-      currentProduct = productName;
-      document.getElementById('addressFormWrapper').style.display = 'block';
-      document.getElementById('paymentModeWrapper').style.display = 'none';
-      document.getElementById('orderConfirmationMessage').style.display = 'none';
-      window.scrollTo(0, document.body.scrollHeight);
-    }
+  function showAddressForm(productName, price) {
+    currentProduct = productName;
 
-    document.getElementById('addressForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      const name = document.getElementById('name').value;
-      const phone = document.getElementById('phone').value;
-      const address = document.getElementById('address').value;
-      const fullInfo = `Deliver to: ${name}, Phone: ${phone}, Address: ${address}, Product: ${currentProduct}`;
-      const userBox = document.getElementById('userAddressBox');
-      userBox.textContent = fullInfo;
-      userBox.style.display = 'block';
-
-      document.getElementById('addressFormWrapper').style.display = 'none';
-      document.getElementById('paymentModeWrapper').style.display = 'block';
-      window.scrollTo(0, document.body.scrollHeight);
+    // Get the clicked product's parent and find its qty input
+    const products = document.querySelectorAll('.bg-white.rounded-xl.shadow.p-4');
+    products.forEach(productCard => {
+      if (productCard.innerHTML.includes(productName)) {
+        currentQtyInput = productCard.querySelector('input[type="number"]');
+      }
     });
 
-    function toggleUPI(show) {
-      document.getElementById('upiDetailsWrapper').style.display = show ? 'block' : 'none';
-    }
+    document.getElementById('addressFormWrapper').style.display = 'block';
+    document.getElementById('paymentModeWrapper').style.display = 'none';
+    document.getElementById('orderConfirmationMessage').style.display = 'none';
+    window.scrollTo(0, document.body.scrollHeight);
+  }
 
-    function confirmPayment() {
-      document.getElementById('paymentModeWrapper').style.display = 'none';
-      document.getElementById('orderConfirmationMessage').style.display = 'flex';
-      setTimeout(() => {
-        document.getElementById('orderConfirmationMessage').style.display = 'none';
-      }, 10000);
-    }
-  </script>
+  document.getElementById('addressForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const quantity = currentQtyInput ? currentQtyInput.value : 1;
+
+    const fullInfo = `Deliver to: ${name}, Phone: ${phone}, Address: ${address}, Product: ${currentProduct}, Quantity: ${quantity}`;
+
+    const userBox = document.getElementById('userAddressBox');
+    userBox.textContent = fullInfo;
+    userBox.style.display = 'block';
+
+    document.getElementById('addressFormWrapper').style.display = 'none';
+    document.getElementById('paymentModeWrapper').style.display = 'block';
+    window.scrollTo(0, document.body.scrollHeight);
+  });
+
+  function toggleUPI(show) {
+    document.getElementById('upiDetailsWrapper').style.display = show ? 'block' : 'none';
+  }
+
+  function confirmPayment() {
+    document.getElementById('paymentModeWrapper').style.display = 'none';
+    document.getElementById('orderConfirmationMessage').style.display = 'flex';
+    setTimeout(() => {
+      document.getElementById('orderConfirmationMessage').style.display = 'none';
+    }, 10000);
+  }
+</script>
+
 
 </body>
 </html>
