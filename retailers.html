@@ -111,18 +111,19 @@
     </div>
   </div>
 
-  <script>
+ <script>
   let currentProduct = '';
   let currentQtyInput = null;
 
   function showAddressForm(productName, price) {
     currentProduct = productName;
 
-    // Get the clicked product's parent and find its qty input
-    const products = document.querySelectorAll('.bg-white.rounded-xl.shadow.p-4');
-    products.forEach(productCard => {
-      if (productCard.innerHTML.includes(productName)) {
-        currentQtyInput = productCard.querySelector('input[type="number"]');
+    // Sahi product card ka input field pakadne ke liye
+    const allCards = document.querySelectorAll('.bg-white.rounded-xl.shadow.p-4');
+    allCards.forEach(card => {
+      const heading = card.querySelector('h2');
+      if (heading && heading.textContent.trim() === productName.trim()) {
+        currentQtyInput = card.querySelector('input[type="number"]');
       }
     });
 
