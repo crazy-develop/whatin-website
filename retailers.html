@@ -21,13 +21,13 @@
 <body class="bg-gray-50 text-gray-800">
 
   <!-- Top Navigation -->
-  <div class="flex justify-between items-center px-6 py-4 bg-white shadow">
+  <div class="flex flex-col md:flex-row justify-between items-center px-4 py-3 bg-white shadow gap-2">
     <h1 class="text-2xl font-bold">cold-water</h1>
-    <div class="flex gap-4 items-center">
-      <input type="text" placeholder="Search products..." class="pl-4 pr-4 py-2 border rounded-full text-sm" />
-      <button class="flex items-center px-4 py-2 border rounded text-sm">🛒 Cart</button>
-      <a href="signup.html" class="flex items-center px-4 py-2 border rounded text-sm">👤 Sign Up</a>
-      <a href="login.html" class="flex items-center px-4 py-2 border rounded text-sm">🔑 Login</a>
+    <div class="flex flex-col sm:flex-row gap-2 items-center w-full md:w-auto">
+      <input type="text" placeholder="Search products..." class="w-full sm:w-auto pl-4 pr-4 py-2 border rounded-full text-sm" />
+      <button class="flex items-center px-4 py-2 border rounded text-sm w-full sm:w-auto justify-center">🛒 Cart</button>
+      <a href="signup.html" class="flex items-center px-4 py-2 border rounded text-sm w-full sm:w-auto justify-center">👤 Sign Up</a>
+      <a href="login.html" class="flex items-center px-4 py-2 border rounded text-sm w-full sm:w-auto justify-center">🔑 Login</a>
     </div>
   </div>
 
@@ -35,7 +35,7 @@
   <div id="userAddressBox" class="max-w-2xl mx-auto mt-4 p-4 rounded-xl border border-green-400 bg-green-100 bg-opacity-50 text-green-900 font-medium"></div>
 
   <!-- Product Grid -->
-  <div class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+  <div class="p-4 sm:p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
     <script>
       const products = [
         { name: 'Cold Water Bottle 20L', price: 25, image: 'bottle3.png', ro: 'jay siya ram ro water', rating: '★★★★☆' },
@@ -52,16 +52,16 @@
 
       products.forEach((product) => {
         document.write(`
-          <div class="bg-white rounded-xl shadow p-4">
+          <div class="bg-white rounded-xl shadow p-4 flex flex-col">
             <img src="${product.image}" alt="${product.name}" class="w-full h-40 object-contain rounded" />
             <h2 class="text-lg font-semibold mt-2">${product.name}</h2>
             <p class="text-gray-600">₹${product.price}</p>
             <p class="text-gray-600">${product.ro}</p>
             <div class="text-yellow-400">${product.rating}</div>
             <div class="flex items-center gap-2 mt-2">
-              <label>Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded" />
+              <label class="text-sm">Qty:</label><input type="number" value="1" min="1" class="w-16 px-2 py-1 border rounded text-sm" />
             </div>
-            <div class="flex gap-2 mt-2">
+            <div class="flex flex-col sm:flex-row gap-2 mt-2">
               <button class="px-3 py-1 border rounded text-sm">Add to Cart</button>
               <button class="px-3 py-1 bg-blue-600 text-white rounded text-sm" onclick="showAddressForm('${product.name}', '${product.price}')">Buy Now</button>
             </div>
@@ -111,14 +111,13 @@
     </div>
   </div>
 
- <script>
+<script>
   let currentProduct = '';
   let currentQtyInput = null;
 
   function showAddressForm(productName, price) {
     currentProduct = productName;
 
-    // Sahi product card ka input field pakadne ke liye
     const allCards = document.querySelectorAll('.bg-white.rounded-xl.shadow.p-4');
     allCards.forEach(card => {
       const heading = card.querySelector('h2');
@@ -163,7 +162,6 @@
     }, 10000);
   }
 </script>
-
 
 </body>
 </html>
